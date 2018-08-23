@@ -1,0 +1,12 @@
+#!/bin/bash
+
+firstline=`cat wsgi.py |sed -n '1p'`
+str='#!/usr/bin/env python'
+if [ "$firstline" = "$str" ]
+then
+	echo "yes"
+	exit 0
+else
+	echo "format error"
+	exit 1
+fi

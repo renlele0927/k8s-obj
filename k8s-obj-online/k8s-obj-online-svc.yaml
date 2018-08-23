@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: k8s-obj-online
+  labels:
+    app: k8s-obj-online
+spec:
+  type: NodePort
+  ports:
+    - port: 9090
+      nodePort: 9191
+  selector:
+    app: k8s-obj-online
